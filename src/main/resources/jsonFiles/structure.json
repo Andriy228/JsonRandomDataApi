@@ -1,0 +1,14 @@
+{
+  "firstname": "@firstname()",
+  "lastname": "@lastname()",
+  "dateOfBirth": "2021-09-29",
+  "dateOfDath" :"@date(#dateOfBirth, now)",
+  "registrationDate": "2015-01-01",
+  "tags": "@manyOf(['tag1', 'tag2', 'tag3'], 1, 10)",
+  "address": {
+    "country": "ukraine",
+    "city": "@oneOf('Atlanta', 'Austin', 'Moskwa', 'Sant', 'Russia')",
+    "street": "@oneOf('some street1', 'some street')",
+    "apartment": "@number(10, 100)"
+  }
+}
