@@ -19,7 +19,8 @@ import static java.lang.Integer.parseInt;
 public class Main {
     public static void main(String[] args) throws URISyntaxException, IOException {
         WorkWithJson workWithJson = new WorkWithJson();
-        workWithJson.passage(workWithJson.getIterator());
+        workWithJson.copy(workWithJson.getIterator());
+        workWithJson.putData(workWithJson.getNodeJson().fields());
         workWithJson.getMapper().writeValue(new File("file.json"),workWithJson.getNodeJson());
     }
 }

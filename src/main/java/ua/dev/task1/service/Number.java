@@ -17,9 +17,16 @@ public class Number implements IData {
 
     @Override
     public void parse(String str) {
-        str = str.substring(str.indexOf("(") + 1,str.indexOf(")"));
-        String[] strings = str.split(", ");
-        from=Integer.parseInt(strings[0]);
-        to=Integer.parseInt(strings[1]);
+        str = GetParams.get(str);
+        String[] crap = { ","," ,"};
+        for (String replace : crap){
+            str = str.replace(replace," ").trim();
+        }
+        while (str.contains("  ")) {
+            str = str.replace("  ", " ");
+        }
+        String[] strings = str.split(" ");
+        from = Integer.parseInt(strings[0]);
+        to = Integer.parseInt(strings[1]);
     }
 }
